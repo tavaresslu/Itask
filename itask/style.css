@@ -1,0 +1,20 @@
+/*configuração padrao*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --cinza: #939494;
+    --preto: #000000;
+
+}
+/*body*/
+body{
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--cinza);
+    color: var(--preto);
+    font-size: 16px;
+    padding: 20px;
+
+}
