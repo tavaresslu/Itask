@@ -25,8 +25,8 @@ class Tarefa {
             <span>🕐 ${this.formatarData()}</span>
         </div>
     `
-    
-    const checkbox = li.querySelector('input[type="checkbox"]') as HTMLInputElement
+
+        const checkbox = li.querySelector('input[type="checkbox"]') as HTMLInputElement
 
         checkbox.addEventListener('change', () => {
             this.concluida = checkbox.checked
@@ -46,6 +46,9 @@ class App {
     private inputTitulo: HTMLInputElement
     private inputDescricao: HTMLTextAreaElement
     private btnAdicionar: HTMLButtonElement
+    private modalOverlay: HTMLDivElement
+    private btnAbrirModal: HTMLButtonElement
+    private btnFechar: HTMLButtonElement
 
     constructor() {
         this.lista = document.getElementById('listaTarefas') as HTMLUListElement
@@ -53,6 +56,17 @@ class App {
         this.inputDescricao = document.getElementById('inputDescricao') as HTMLTextAreaElement
         this.btnAdicionar = document.getElementById('btnAdicionar') as HTMLButtonElement
         this.btnAdicionar.addEventListener('click', () => this.adicionarTarefa())
+        this.modalOverlay = document.getElementById('modalOverlay') as HTMLDivElement
+        this.btnAbrirModal = document.getElementById('btnAbrirModal') as HTMLButtonElement
+        this.btnFechar = document.getElementById('btnFechar') as HTMLButtonElement
+
+        this.btnAbrirModal.addEventListener('click', () => {
+            this.modalOverlay.style.display = 'flex'
+        })
+
+        this.btnFechar.addEventListener('click', () => {
+            this.modalOverlay.style.display = 'none'
+        })
     }
 
     adicionarTarefa(): void {
@@ -73,6 +87,7 @@ class App {
         this.inputTitulo.value = ''
         this.inputDescricao.value = ''
         this.inputTitulo.focus()
+        this.modalOverlay.style.display = 'none'
     }
 }
 const app = new App()

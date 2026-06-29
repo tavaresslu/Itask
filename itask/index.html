@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Itask</title>
 </head>
+
 <body>
     <div class="container">
-        <h1>Bem-vindo ao Itask</h1>
-       <div class='form-box'>
-        <input type="text" id="inputTitulo" placeholder="Título da tarefa" />
-        <textarea id="inputDescricao" placeholder="Descrição (opcional)"></textarea>
-        <button id="btnAdicionar">Adicionar Tarefa</button>
-       </div>
-       <ul id ="listaTarefas">
-       </ul>
+        <div class="banner">
+            <p>Bem-vindo ao</p>
+            <h1>iTask</h1>
+        </div>
+        <button id="btnAbrirModal">+ Nova Tarefa</button>
+
+        <div class="modal-overlay" id="modalOverlay">
+            <div class="form-box">
+                <button id="btnFechar">✕</button>
+                <h2>Nova Tarefa</h2>
+                <input type="text" id="inputTitulo" placeholder="Título da tarefa" />
+                <textarea id="inputDescricao" placeholder="Descrição (opcional)"></textarea>
+                <button id="btnAdicionar">Adicionar Tarefa</button>
+            </div>
+        </div>
+        <ul id="listaTarefas">
+        </ul>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>

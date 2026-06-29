@@ -41,6 +41,15 @@ class App {
         this.inputDescricao = document.getElementById('inputDescricao');
         this.btnAdicionar = document.getElementById('btnAdicionar');
         this.btnAdicionar.addEventListener('click', () => this.adicionarTarefa());
+        this.modalOverlay = document.getElementById('modalOverlay');
+        this.btnAbrirModal = document.getElementById('btnAbrirModal');
+        this.btnFechar = document.getElementById('btnFechar');
+        this.btnAbrirModal.addEventListener('click', () => {
+            this.modalOverlay.style.display = 'flex';
+        });
+        this.btnFechar.addEventListener('click', () => {
+            this.modalOverlay.style.display = 'none';
+        });
     }
     adicionarTarefa() {
         const titulo = this.inputTitulo.value.trim();
@@ -56,6 +65,7 @@ class App {
         this.inputTitulo.value = '';
         this.inputDescricao.value = '';
         this.inputTitulo.focus();
+        this.modalOverlay.style.display = 'none';
     }
 }
 const app = new App();
