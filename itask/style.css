@@ -54,7 +54,7 @@ body {
 }
 
 .form-box {
-    background-color: #fff;
+    background-color: var(--off);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -107,7 +107,7 @@ body {
 }
 
 .card-tarefa {
-    background-color: #fff;
+    background-color: var(--off);
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 8px(0, 0, 0, 0.1);
@@ -117,7 +117,7 @@ body {
 }
 
 .card-tarefa.concluida {
-    background-color: #d4edda;
+    background-color: var(--verde);
     opacity: 0.8;
 }
 
@@ -131,9 +131,9 @@ body {
     align-self: flex-end;
     background: none;
     border: none;
-    font-size: 1.2rem;
+    font-size:1rem;
     cursor: pointer;
-    color: #999;
+    color: var(--preto);
 }
 
 /* botao salvar*/
@@ -141,10 +141,17 @@ body {
     width: 100%;
     padding: 12px;
     background-color: var(--amarelo);
-    color: #000;
+    color: var(--preto);
     border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
+}
+
+.card-tarefa .info span {
+    font-size: 0.85rem;
+    color: var(--cinza-escuro);
+    display: block;
+    margin-top: 4px;
 }
